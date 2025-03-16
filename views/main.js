@@ -24,4 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const redirectButton = document.getElementById("redirectLink3");
+    console.log("Succesfull load of js dom");
+    const redirectToCreateReview = () => {
+        console.log("Successful Trigger");
+        window.location.href = "/statistics";
+    };
+    if (redirectButton) {
+        redirectButton.addEventListener("click", redirectToCreateReview);
+        console.log("Attached event listener");
+    }
+    
+});
 
