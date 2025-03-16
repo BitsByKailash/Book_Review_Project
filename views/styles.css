@@ -1,0 +1,25 @@
+body {
+  background-image: url('./background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h1 {
+    margin-left: 30%;
+    color: rgb(255,234,197);
+
+}
+.dancing-script{
+    align-self: center;
+    margin-right: 0%;
+  font-family: "Tektur", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 40px;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+    font-size: 60px;
+  }
+.Heading {
+    height: 40px;
+}
