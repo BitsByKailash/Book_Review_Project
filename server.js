@@ -52,7 +52,8 @@ const pool = new Pool({
     // database: "bookreview",
     // password: "HareKrishnaHareKrishna123!",
     // port: 5432,
-    connectionString: "postgresql://postgres:inbmvzufYCVtyEFxnRNFlEPGKzpFmsrV@caboose.proxy.rlwy.net:12828/railway",
+    //connectionString: "postgresql://postgres:inbmvzufYCVtyEFxnRNFlEPGKzpFmsrV@caboose.proxy.rlwy.net:12828/railway",
+    connectionstring: "postgresql://postgres:YAvDwixpnyhVdAYIIJoTTycifpRyzekV@switchyard.proxy.rlwy.net:26177/railway",
     ssl: {
       rejectUnauthorized: false
     }
