@@ -68,7 +68,6 @@ h1 {
         My Book Reviews
     </h1>
     
-    <% for( let index = 0; index < (array.length)/9; index++ ) { %>
         <div class="album py-5">
           <div class="container">
             <% for (let index = 0; index < array.length; index += 3) { %>
@@ -93,170 +92,10 @@ h1 {
               </div>
             <% } %>
           </div>
-          
-              <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img src = "<%= array[(9*index)+0].booklink %>" alt="Eragon-book" height="225" />
-                    <div class="card-body">
-                      <p class="card-text"><%= array[(9*index)+0].review %></p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary"><a href="<%= array[(9*index)+0].amazonLink %>" >Buy Book</a></button>
-                          <button type="button" class="btn btn-sm btn-outline-secondary"><a href="" >Change</a></button>
-                        </div>
-                        <small class="text-body-secondary"><%= array[(9*index)+0].rdtm %></small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                      <img src = "<%= array[(9*index)+1].booklink %>" alt="Sorcerer's Stone" height="225" />
-                      <div class="card-body">
-                        <p class="card-text"><%= array[(9*index)+1].review %></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="<%= array[(9*index)+1].amazonLink %>" >Buy Book</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="" >Change</a></button>
-                          </div>
-                          <small class="text-body-secondary"><%= array[(9*index)+1].rdtm %></small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <img src = "<%= array[(9*index)+2].booklink 
-                      %>" alt="Chamber of secrets" height="225" />
-                      <div class="card-body">
-                        <p class="card-text"><%= array[(9*index)+2].review %></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="<%= array[(9*index)+2].amazonLink %>" >Buy Book</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="" >Change</a></button>
-                          </div>
-                          <small class="text-body-secondary"><%= array[(9*index)+2].rdtm %></small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <img src="<%= array[(9*index)+3].booklink %>" alt="Goblet of fire" height="225" />
-                      <div class="card-body">
-                        <p class="card-text"><%= array[(9*index)+3].review %></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="<%= array[(9*index)+3].amazonLink %>" >Buy Book</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="" >Change</a></button>
-                          </div>
-                          <small class="text-body-secondary"><%= array[(9*index)+3].rdtm %></small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <img src = "<%= array[(9*index)+4].booklink %>" alt="Eragon-book" height="225" />
-                      <div class="card-body">
-                        <p class="card-text"><%= array[(9*index)+4].booklink %></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="<%= array[(9*index)+4].amazonLink %>" >Buy Book</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="" >Change</a></button>
-                          </div>
-                          <small class="text-body-secondary"><%= array[(9*index)+4].rdtm %></small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <img src = "<%= array[(9*index)+5].booklink %>" alt="Eragon-book" height="225" />
-                      <div class="card-body">
-                        <p class="card-text"><%= array[(9*index)+5].review %></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="<%= array[(9*index)+5].amazonLink %>" >Buy Book</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="" >Change</a></button>
-                          </div>
-                          <small class="text-body-secondary"><%= array[(9*index)+5].rdtm %></small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-        
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <img src = "<%= array[(9*index)+5].booklink %>" alt="Eragon-book" height="225" />
-                      <div class="card-body">
-                        <p class="card-text"><%= array[(9*index)+6].review %></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="<%= array[(9*index)+6].amazonLink %>" >Buy Book</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="" >Change</a></button>
-                          </div>
-                          <small class="text-body-secondary"><%= array[(9*index)+6].rdtm %></small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <img src = "<%= array[(9*index)+5].booklink %>" alt="Eragon-book" height="225" />
-                      <div class="card-body">
-                        <p class="card-text"><%= array[(9*index)+7].review %></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="<%= array[(9*index)+7].amazonLink %>" >Buy Book</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="" >Change</a></button>
-                          </div>
-                          <small class="text-body-secondary"><%= array[(9*index)+7].rdtm %></small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card shadow-sm">
-                      <img src = "<%= array[(9*index)+5].booklink %>" alt="Eragon-book" height="225" />                      <div class="card-body">
-                        <p class="card-text"><%= array[(9*index)+8].review %></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="<%= array[(9*index)+8].amazonLink %>" >Buy Book</a></button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary"><a href="" >Change</a></button>
-                          </div>
-                          <small class="text-body-secondary"><%= array[(9*index)+8].rdtm %></small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-              </div> -->
-              <!-- <% for (let j = 0; j < 9; j++) { %>
-                <% if ((9 * index) + j < array.length) { %>
-                    <div class="col-">
-                        <div class="card shadow-sm">
-                            <img src="<%= array[/* (9*index) + j*/0].booklink %>" alt="Book Cover" height="445" />
-                            <div class="card-body">
-                                <p class="card-text"><%= array[(9*index) + j].review %></p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="<%= array[(9*index) + j].amazonLink %>" class="btn btn-sm btn-outline-secondary">Buy Book</a>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Change</button>
-                                    </div>
-                                    <small class="text-body-secondary"><%= array[(9*index) + j].rdtm %></small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <% } %>
-            <% } %> -->
             
             </div>
           </div>
-    <% } %>
+    
     <script src = "./main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
