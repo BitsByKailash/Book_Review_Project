@@ -54,6 +54,31 @@ const pool = new Pool({
     port: 5432,
   });
 
+async function getreadingTimeOf (bookTitle)
+{
+  try {
+    const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(bookTitle)}`);
+    const book = response.data.items[0];
+    const pageCount = book?.volumeInfo?.pageCount || 0;
+    if (pageCount === 0)
+    {
+      console.error("Page count unavailable");
+      return null;
+    }
+    const wordPerPage = 250; //Averaged out
+    const totalWords = pageCount*wordPerPage;
+    const readingSpeed = 225; //Average wpm
+    const hours = Math.floor((totalWords/readingSpeed)/60);
+    const minutes = Math.floor((totalWords/readingSpeed)%60);
+    const readingTime = hours>0?`${hours} hrs ${minutes} mins`:`${minutes} mins`;
+    return(readingTime);
+  } catch (error) {
+    console.error('Error fetching book data: ',error);
+    return(null);
+  }
+}
+
+
   app.get("/createReview", async (req,res) => {
     res.render("createReview");
 });
@@ -69,8 +94,13 @@ app.post("/createReview", upload.single("bookImage"), async (req, res) => {
       if (!reviewText) {
           return res.status(400).json({ error: "Review text is required" });
       }
-
-      await pool.query("INSERT INTO books (review, booklink) VALUES ($1, $2)", [reviewText, bookImage]);
+      const readTime = await getreadingTimeOf(bookName);
+      console.log(readTime);
+      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=intitle:${encodeURIComponent(bookName)}`);
+      const book =  response.data.items[0];
+      const infolink = book.volumeInfo.infoLink;
+      console.log(infolink);
+      await pool.query("INSERT INTO books (review, booklink, rdtm, amazonlink) VALUES ($1, $2, $3, $4)", [reviewText, bookImage, readTime, infolink]);
       
       console.log("Received Review:", reviewText);
       res.status(201).json({ message: "Review submitted successfully!" });
