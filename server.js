@@ -47,11 +47,15 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 const pool = new Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "bookreview",
-    password: "HareKrishnaHareKrishna123!",
-    port: 5432,
+    // user: "postgres",
+    // host: "localhost",
+    // database: "bookreview",
+    // password: "HareKrishnaHareKrishna123!",
+    // port: 5432,
+    connectionString: "postgresql://postgres:inbmvzufYCVtyEFxnRNFlEPGKzpFmsrV@caboose.proxy.rlwy.net:12828/railway",
+    ssl: {
+      rejectUnauthorized: false
+    }
   });
 
 async function getreadingTimeOf (bookTitle)
