@@ -53,7 +53,10 @@ const pool = new Pool({
     // password: "HareKrishnaHareKrishna123!",
     // port: 5432,
     //connectionString: "postgresql://postgres:inbmvzufYCVtyEFxnRNFlEPGKzpFmsrV@caboose.proxy.rlwy.net:12828/railway",
-    connectionstring: process.env.DATABASE_URL
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
     
   });
   pool.connect()
