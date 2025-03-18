@@ -58,7 +58,7 @@ const pool = new Pool({
   });
   pool.connect()
   .then(() => console.log('Connected to the database'))
-  .catch((err)=>CommandCompleteMessage.error("Error in connecting to the database :",err));
+  .catch((err)=> console.error("Error in connecting to the database :",err));
 
 async function getreadingTimeOf (bookTitle)
 {
