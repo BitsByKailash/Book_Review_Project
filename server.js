@@ -53,11 +53,12 @@ const pool = new Pool({
     // password: "HareKrishnaHareKrishna123!",
     // port: 5432,
     //connectionString: "postgresql://postgres:inbmvzufYCVtyEFxnRNFlEPGKzpFmsrV@caboose.proxy.rlwy.net:12828/railway",
-    connectionstring: "postgresql://postgres:YAvDwixpnyhVdAYIIJoTTycifpRyzekV@switchyard.proxy.rlwy.net:26177/railway",
-    ssl: {
-      rejectUnauthorized: false
-    }
+    connectionstring: process.env.DATABASE_URL
+    
   });
+  pool.connect()
+  .then(() => console.log('Connected to the database'))
+  .catch((err)=>CommandCompleteMessage.error("Error in connecting to the database :",err));
 
 async function getreadingTimeOf (bookTitle)
 {
